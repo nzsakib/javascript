@@ -1,0 +1,21 @@
+{
+  "name": "javascript",
+  "homepage": "https://github.com/nzsakib/javascript",
+  "authors": [
+    "Nazmus Sakib <sukku.mia@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3",
+    "jquery": "^3.2.1"
+  }
+}
