@@ -6,16 +6,31 @@
     <script type="text/javascript" src="../bower_components/paper/dist/paper-full.js"></script>
 
     <script type="text/paperscript" canvas="myCanvas">
-       
-
-       function onKeyDown(event) {
-            var maxWidth = window.innerWidth;
-            var maxHeight = window.innerHeight;
-            var randomX = Math.floor(Math.random() * maxWidth);
-            var randomY = Math.floor(Math.random() * maxHeight);
-            var circle = new Path.Circle(new Point(randomX, randomY), 10);
+        var circles = [];
+        function onKeyDown(event) {
+             var maxWidth = window.innerWidth;
+            // var maxHeight = window.innerHeight;
+             console.log(maxWidth);
+            // var randomX = Math.floor(Math.random() * maxWidth);
+            // var randomY = Math.floor(Math.random() * maxHeight);
+            // var circle = new Path.Circle(new Point(randomX, randomY), 10);
+            // circle.fillColor = 'orange';
+            
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint;
+            var circle = new Path.Circle(point, 500);
             circle.fillColor = 'orange';
-       }
+            circles.push(circle);
+        }
+        
+        function onFrame(event) {
+            for( var i=0; i < circles.length; i++) {
+                circles[i].fillColor.hue += 1;
+                circles[i].scale(.9);
+        }
+            
+    }
     </script>
 </head>
 <body>
